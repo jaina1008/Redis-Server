@@ -32,5 +32,17 @@ XADD temperatures:us-ny:10007 * temp_f 87.2 pressure 29.69 humidity 47
 XADD temperatures:us-ny:10007 * temp_f 87.2 pressure 29.69 humidity 48
 
 
+// GEOSPATIAL DATA 
 
+GEOADD bikes:rentable -122.27652 37.805186 station:1
+GEOADD bikes:rentable -122.2674626 37.8062344 station:2
+GEOADD bikes:rentable -122.2469854 37.8104049 station:3
+
+GEOSEARCH bikes:rentable FROMLONLAT -122.2612767 37.7936847 BYRADIUS 5 km WITHDIST
+
+
+// INTERACT WITH DATA 
+
+SUBSCRIBE notifications
+PUBLISH notifications hey
 
